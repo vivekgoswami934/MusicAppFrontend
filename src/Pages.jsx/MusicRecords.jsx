@@ -1,16 +1,17 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components";
-import { deleteFunc, getMusicRecords } from "../AppReducer/action";
+import { deleteFunc, getMusicRecords } from "../Redux/AppReducer/action";
 import { useSearchParams, useLocation ,Link } from "react-router-dom";
 
 const MusicRecords = () => {
+  const location = useLocation();  //hero
+
   const dispatch = useDispatch();
   const { musicRecords , isLoading , isError } = useSelector((store) => store.AppReducer);
   // console.log(1, musicRecords);
   const [searchParams] = useSearchParams();
   
-  const location = useLocation();
   console.log("location",location)
 
   // console.log("location", location);
@@ -26,9 +27,10 @@ const MusicRecords = () => {
   useEffect(() => {
     if (location || musicRecords.length === 0) {
       const sortBy = searchParams.get("sortBy");
+      const any = searchParams.getAll("genre")
       const queryParams = {
         params: {
-          genre: searchParams.getAll("genre"),
+          genre: any,
           _sort: sortBy && "year",
           _order: sortBy,
         },
@@ -49,7 +51,7 @@ const MusicRecords = () => {
           margin: "10",
         }}
       >
-        {musicRecords?.map((album) => (            //optional chaining
+        {musicRecords?.map((album) => (           
           <MusicRecordssWrapper key={album.id}>
               <div>  <h4> {album.name}</h4> </div>
             <Link className="linkbaaz" to={`/music/${album.id}`}>

@@ -8,10 +8,14 @@ const Homepage = () => {
     <div>
       <HomePageWrapper>
         <FilterSortWrapper>
-          <FilterSort />
+
+          <FilterSort />  
+
         </FilterSortWrapper>
         <MusicRecorderWrapper>
+
           <MusicRecords />
+
         </MusicRecorderWrapper>
       </HomePageWrapper>
     </div>

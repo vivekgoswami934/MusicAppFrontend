@@ -8,14 +8,15 @@ import {
   UPDATE_SUCCESS,
 } from "./actionType";
 
+
 export const getMusicRecords = (params) => (dispatch) => {
   dispatch({ type: GET_MUSIC_RECORD_REQUEST });
   // console.log("param in actionnnnnnn", params);
 
   return axios
     .get("http://localhost:8080/albums", params)
-    .then((r) => {
-      return dispatch({ type: GET_MUSIC_RECORD_SUCCESS, payload: r.data });
+    .then((res) => {
+      return dispatch({ type: GET_MUSIC_RECORD_SUCCESS, payload: res.data });
     })
     .catch((e) => dispatch({ type: GET_MUSIC_RECORD_FAILURE }));
 };

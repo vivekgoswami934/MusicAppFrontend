@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Navigate, useNavigate, useParams } from "react-router-dom";
 import { useSelector } from "react-redux/es/hooks/useSelector";
-import { getMusicRecords, updateMusicRecords } from "../AppReducer/action";
+import { getMusicRecords, updateMusicRecords } from "../Redux/AppReducer/action";
 import { useDispatch } from "react-redux";
 
 const EditMusicRecord = () => {

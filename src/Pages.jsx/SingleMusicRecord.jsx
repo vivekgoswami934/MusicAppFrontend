@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useParams, Link } from "react-router-dom";
-import { getMusicRecords } from "../AppReducer/action";
+import { getMusicRecords } from "../Redux/AppReducer/action";
 
 const SingleMusicRecord = () => {
   //some data in the params
@@ -12,8 +12,7 @@ const SingleMusicRecord = () => {
   const dispatch = useDispatch();
   const [currentMusicAlbum, setCurrentMusicAlbum] = useState({});
   const { id } = useParams();
-  const {musicRecords} = useSelector((state) => state.AppReducer);
-
+  const { musicRecords } = useSelector((state) => state.AppReducer);
 
   //  console.log(musicRecords)
   // console.log(id)
@@ -46,7 +45,7 @@ const SingleMusicRecord = () => {
         <h4> {currentMusicAlbum.id} </h4>
         <h4> {currentMusicAlbum.name} </h4>
         <h4> {currentMusicAlbum.genre} </h4>
-        <img src={currentMusicAlbum.img} />
+        <img src={currentMusicAlbum.img} alt="pic" />
         <h4> {currentMusicAlbum.artist} </h4>
       </div>
 

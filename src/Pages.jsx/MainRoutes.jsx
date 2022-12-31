@@ -5,7 +5,7 @@ import Homepage from "./Homepage";
 import Login from "./Login";
 import CheckAuth from "../Components/CheckAuth";
 import SingleMusicRecord from "./SingleMusicRecord";
-
+                                                          // protected route ==> checkauth
 const MainRoutes = () => {
   return (
     <>
@@ -14,7 +14,7 @@ const MainRoutes = () => {
         <Route
           path="/music/:id"
           element={
-            <CheckAuth>
+            <CheckAuth>            
               <SingleMusicRecord />
             </CheckAuth>
           }

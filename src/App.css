@@ -54,3 +54,7 @@ button{
   border: none;
   border-radius: 4px ;
 }
+
+h1{
+  text-decoration: none;
+}

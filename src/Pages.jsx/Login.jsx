@@ -1,16 +1,16 @@
 import React, { useState } from "react";
 import { useDispatch ,useSelector } from "react-redux/es/exports";
-import { login } from "../AuthReducer/action";
-import { USER_LOGIN_SUCCESS } from "../AuthReducer/actionType";
+import { login } from "../Redux/AuthReducer/action";
+import { USER_LOGIN_SUCCESS } from "../Redux/AuthReducer/actionType";
 
 import {useNavigate , useLocation} from "react-router-dom";
 
 const Login = () => {
+  const location = useLocation()
 const navigate = useNavigate()
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const location = useLocation()
   console.log("loginLocation",location);
 
   const {isAuth} = useSelector(state => state.AuthReducer)

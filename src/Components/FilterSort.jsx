@@ -4,16 +4,23 @@ import { useSearchParams } from "react-router-dom";
 const FilterSort = () => {
   const [searchParams, setSearchParams] = useSearchParams();
 
-  let initalGenreParams = searchParams.getAll("genre");
-  const [category, setCategory] = useState(initalGenreParams || []);  
 
-  let initialSortParams = searchParams.get("sortBy");
+  let initalGenreParams = searchParams.getAll("genre");           // [] getAll
+  const [category, setCategory] = useState(initalGenreParams || []);
+
+  let initialSortParams = searchParams.get("sortBy");                // string  get
   const [sortBy, setSortBy] = useState(initialSortParams || "");
 
-  const handleGenreChange = (e) => {
-    const option = e.target.value;   //kpop
 
-    let newCategory = [...category];
+  console.log(undefined || [])  // []
+
+
+
+
+  const handleGenreChange = (e) => {
+    const option = e.target.value;   // k-pop
+ 
+    let newCategory = [...category];    // [k-pop]
 
     if (category.includes(option)) {
       newCategory.splice(newCategory.indexOf(option), 1);
@@ -27,16 +34,15 @@ const FilterSort = () => {
     setSortBy(e.target.value);
   };
 
+
   useEffect(() => {
     if (category || sortBy) {
-      // console.log(searchParams,category)
       const params = {};
       category && (params.genre = category);
       sortBy && (params.sortBy = sortBy);
-      //   setSearchParams({ genre: category, sortBy: sortBy });
       setSearchParams(params);
     }
-  }, [category, setSearchParams, sortBy]);
+  }, [category, setSearchParams, sortBy]);  // dependency
 
   // console.log(sortBy);
   // console.log(searchParams.getAll("genre"));
@@ -48,7 +54,7 @@ const FilterSort = () => {
       <div>
         <input
           value="K-Pop"
-          defaultChecked={category.includes("K-Pop")}
+          checked={category.includes("K-Pop")}
           type="checkbox"
           onChange={handleGenreChange}
         />
