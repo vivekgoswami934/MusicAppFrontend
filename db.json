@@ -1,7 +1,24 @@
 {
   "albums": [
     {
-      "id": "4",
+      "id": "1",
+      "name": "POWER UP",
+      "artist": "Vivek Goswami",
+      "genre": " Hard Rock",
+      "year": 2019,
+      "no_of_songs": "2",
+      "img": "https://is2-ssl.mzstatic.com/image/thumb/Music114/v4/ba/07/bc/ba07bcdd-5129-1d5e-6267-8252f0e24829/20UMGIM69450.rgb.jpg/170x170bb.png",
+      "songs": [
+        {
+          "name": "abc"
+        },
+        {
+          "name": "def"
+        }
+      ]
+    },
+    {
+      "id": "2",
       "name": "POWER UP",
       "artist": "Vivek Goswami",
       "genre": " Hard Rock",
@@ -18,7 +35,58 @@
       ]
     },
     {
+      "id": "3",
+      "name": "POWER UP",
+      "artist": "Vivek Goswami",
+      "genre": " Hard Rock",
+      "year": 2019,
+      "no_of_songs": "2",
+      "img": "https://is4-ssl.mzstatic.com/image/thumb/Music114/v4/b0/ec/cb/b0eccb83-3ea8-4404-1747-9080482e5e8a/886448802198.jpg/170x170bb.png",
+      "songs": [
+        {
+          "name": "abc"
+        },
+        {
+          "name": "def"
+        }
+      ]
+    },
+    {
+      "id": "4",
+      "name": "POWER UP",
+      "artist": "Vivek Goswami",
+      "genre": " Hard Rock",
+      "year": 2019,
+      "no_of_songs": "2",
+      "img": "https://is2-ssl.mzstatic.com/image/thumb/Music124/v4/0d/39/fb/0d39fbc2-98b1-4e9d-a8e9-159139834fa6/20UMGIM80226.rgb.jpg/170x170bb.png",
+      "songs": [
+        {
+          "name": "abc"
+        },
+        {
+          "name": "def"
+        }
+      ]
+    },
+    {
       "id": "5",
+      "name": "POWER UP",
+      "artist": "Vivek Goswami",
+      "genre": " Hard Rock",
+      "year": 2019,
+      "no_of_songs": "2",
+      "img": "https://is4-ssl.mzstatic.com/image/thumb/Music114/v4/b0/ec/cb/b0eccb83-3ea8-4404-1747-9080482e5e8a/886448802198.jpg/170x170bb.png",
+      "songs": [
+        {
+          "name": "abc"
+        },
+        {
+          "name": "def"
+        }
+      ]
+    },
+    {
+      "id": "6",
       "name": "Starting Over",
       "artist": " Mat and Savanna Shaw",
       "genre": "Holiday",
@@ -34,26 +102,6 @@
         },
         {
           "name": "abc"
-        },
-        {
-          "name": "def"
-        }
-      ]
-    },
-    {
-      "id": "6",
-      "name": "We Need A Little Christmas",
-      "artist": "Pentatonix",
-      "genre": "Holiday",
-      "year": 2018,
-      "no_of_songs": "3",
-      "img": "https://is2-ssl.mzstatic.com/image/thumb/Music114/v4/8a/98/ca/8a98ca35-a9bd-af24-05a8-5d8da2959c46/886448750703.jpg/170x170bb.png",
-      "songs": [
-        {
-          "name": "abc"
-        },
-        {
-          "name": "def"
         },
         {
           "name": "def"
