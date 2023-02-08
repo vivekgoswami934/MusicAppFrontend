@@ -79,11 +79,11 @@ const EditMusicRecord = () => {
      >
        <Stack spacing={4}>
          <FormControl id="email">
-           <FormLabel>Email address</FormLabel>
+           <FormLabel>Edit Music Name...</FormLabel>
            <Input onChange={(e) =>   setMusicName(e.target.value)} value={musicName} />
          </FormControl>
          <FormControl id="password">
-           <FormLabel>Password</FormLabel>
+           <FormLabel>Edit Artist Name...</FormLabel>
            <Input onChange={(e) => setArtistName(e.target.value)} value={artistName} />
          </FormControl>
          <Stack spacing={10}>

@@ -1,3 +1,4 @@
+import { Button, Center, Flex } from "@chakra-ui/react";
 import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useParams, Link } from "react-router-dom";
@@ -34,23 +35,26 @@ const SingleMusicRecord = () => {
   // console.log(currentMusicAlbum)
 
   return (
-    <>
+    <Center>
+
+    <Flex border="2px solid black">
       <h1>SingleMusicRecord</h1>
 
       <br />
       <br />
       <br />
       <br />
-      <div style={{ border: "4px solid black", width: "30%", margin: "auto" }}>
+      <Flex direction="column">
         <h4> {currentMusicAlbum.id} </h4>
         <h4> {currentMusicAlbum.name} </h4>
         <h4> {currentMusicAlbum.genre} </h4>
         <img src={currentMusicAlbum.img} alt="pic" />
         <h4> {currentMusicAlbum.artist} </h4>
-      </div>
+      </Flex>
 
-      <Link to={`/music/${id}/edit`}>Edit</Link>
-    </>
+      <Link to={`/music/${id}/edit`}> <Button colorScheme="teal">Edit</Button>  </Link>
+    </Flex>
+    </Center>
   );
 };
 
