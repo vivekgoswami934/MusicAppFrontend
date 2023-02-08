@@ -19,6 +19,7 @@ const MusicRecords = () => {
   const handleDelete = (id) =>{
 
    dispatch(deleteFunc(id)).then(()=>{
+    console.log("deletefunction called ")
       dispatch(getMusicRecords())
    })
 
