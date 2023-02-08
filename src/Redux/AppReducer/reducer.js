@@ -27,7 +27,7 @@ const reducer = (oldState = initialState, action) => {  //  {state,action -> typ
         ...oldState,
         isLoading: false,
         isErrr: false,
-        musicRecords: payload,    // []
+        musicRecords: payload,   
       };
     case GET_MUSIC_RECORD_FAILURE:
       return {

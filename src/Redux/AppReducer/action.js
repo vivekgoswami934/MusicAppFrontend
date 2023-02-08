@@ -32,12 +32,8 @@ export const updateMusicRecords = (id, payload) => (dispatch) => {
 };
 
 export const deleteFunc = (id) => async (dispatch) => {
-
-
   try{
-    let delted =  await axios.delete(`${url}/${id}`)
-
-    console.log(delted)
+      await axios.delete(`${url}/${id}`)
   }catch(err){
     console.log(err)
   }
