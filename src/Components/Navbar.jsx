@@ -1,4 +1,3 @@
-import { ReactNode } from 'react';
 import {
   Box,
   Flex,
@@ -18,32 +17,27 @@ import {
   Text,
 } from '@chakra-ui/react';
 import { MoonIcon, SunIcon } from '@chakra-ui/icons';
+import { useNavigate } from 'react-router-dom';
 
-// const NavLink = ({ children }) => (
-//   <Link
-//     px={2}
-//     py={1}
-//     rounded={'md'}
-//     _hover={{
-//       textDecoration: 'none',
-//       bg: useColorModeValue('gray.200', 'gray.700'),
-//     }}
-//     href={'#'}>
-//     {children}
-//   </Link>
-// );
-// box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+
   const shadow = "rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px";
 
 export default function Navbar() {
+  const navigate = useNavigate()
   const { colorMode, toggleColorMode } = useColorMode();
-//   const { isOpen, 
+
+
+  const handleClick = () =>{
+      navigate("/")
+  }
+
   return (
     <>
       <Box bg={useColorModeValue('gray.100', 'white.900')} px={4} shadow={shadow} >
         <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
-          <Box><h1 style={{fontSize:"50px"}}>MusicApp</h1></Box>
-
+          
+          <Box onClick = {handleClick}><h1 style={{fontSize:"50px"}}>MusicApp</h1></Box>
+        
           <Flex alignItems={'center'}>
             <Stack direction={'row'} spacing={7}>
               <Button onClick={toggleColorMode}>

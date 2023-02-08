@@ -13,7 +13,6 @@ import {
   Link,
   Button,
   Heading,
-  Text,
   useColorModeValue,
 } from "@chakra-ui/react";
 
@@ -22,7 +21,7 @@ import { useNavigate, useLocation } from "react-router-dom";
 const Login = () => {
   const location = useLocation();
   const navigate = useNavigate();
-  const [email, setEmail] = useState("");
+  const [email, setEmail] = useState("eve.holt@reqres.in");
   const [password, setPassword] = useState("");
 
   console.log("loginLocation", location);
@@ -35,6 +34,7 @@ const Login = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    console.log("email", email , password)
     if (email && password) {
       dispatch(login({ email, password }))
         .then((r) => {
@@ -67,7 +67,7 @@ const Login = () => {
           <Stack spacing={4}>
             <FormControl id="email">
               <FormLabel>Email address</FormLabel>
-              <Input onChange={(e) => setEmail(e.target.value)} type="email" />
+              <Input onChange={(e) => setEmail(e.target.value)} type="email" value="eve.holt@reqres.in" />
             </FormControl>
             <FormControl id="password">
               <FormLabel>Password</FormLabel>

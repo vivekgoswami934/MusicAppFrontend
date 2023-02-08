@@ -8,13 +8,14 @@ import {
   UPDATE_SUCCESS,
 } from "./actionType";
 
+const url = "https://good-puce-caterpillar-boot.cyclic.app/albums"
 
 export const getMusicRecords = (params) => (dispatch) => {
   dispatch({ type: GET_MUSIC_RECORD_REQUEST });
   // console.log("param in actionnnnnnn", params);
 
   return axios
-    .get("http://localhost:8080/albums", params)
+    .get(url, params)
     .then((res) => {
       return dispatch({ type: GET_MUSIC_RECORD_SUCCESS, payload: res.data });
     })
@@ -25,14 +26,14 @@ export const updateMusicRecords = (id, payload) => (dispatch) => {
   dispatch({ type: UPDATE_REQUEST });
 
   return axios
-    .patch(`http://localhost:8080/albums/${id}`, payload)
+    .patch(`${url}/${id}`, payload)
     .then((r) => dispatch({ type: UPDATE_SUCCESS }))
     .catch((e) => dispatch({ type: UPDATE_FAILURE }));
 };
 
 export const deleteFunc = (id) => async (dispatch) => {
 
-  return await axios.delete(`http://localhost:8080/albums/${id}`).then(() => {
+  return await axios.delete(`${url}/${id}`).then(() => {
     console.log("deleted");
   });
   
