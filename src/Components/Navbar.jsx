@@ -30,7 +30,7 @@ export default function Navbar() {
   const handleClick = () =>{
       navigate("/")
   }
-
+                                       
   return (
     <>
       <Box bg={useColorModeValue('gray.100', 'white.900')} px={4} shadow={shadow} >
