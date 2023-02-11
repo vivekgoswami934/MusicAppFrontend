@@ -12,7 +12,7 @@ const url = "https://good-puce-caterpillar-boot.cyclic.app/albums"
 
 export const getMusicRecords = (params) => (dispatch) => {
   dispatch({ type: GET_MUSIC_RECORD_REQUEST });
-  // console.log("param in actionnnnnnn", params);
+  console.log("param in actionnnnnnn", params);
 
   return axios
     .get(url, params)
@@ -32,9 +32,13 @@ export const updateMusicRecords = (id, payload) => (dispatch) => {
 };
 
 export const deleteFunc = (id) => async (dispatch) => {
+ // database
   try{
       await axios.delete(`${url}/${id}`)
   }catch(err){
     console.log(err)
   }
+
 };
+
+

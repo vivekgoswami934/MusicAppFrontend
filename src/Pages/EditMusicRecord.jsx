@@ -20,7 +20,11 @@ import {
 const EditMusicRecord = () => {
   const dispatch = useDispatch()
   const navigate = useNavigate()
+
+
   const { id } = useParams();
+
+
   const { musicRecords } = useSelector((store) => store.AppReducer);
   console.log(musicRecords);
   const [musicName, setMusicName] = useState("");
@@ -41,7 +45,6 @@ const EditMusicRecord = () => {
    };
 
     useEffect(()=>{
-      console.log("vivek")
       if(musicRecords.length === 0){
         dispatch(getMusicRecords())
       }

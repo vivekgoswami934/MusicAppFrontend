@@ -40,10 +40,9 @@ const SingleMusicRecord = () => {
     <Flex border="2px solid black">
       <h1>SingleMusicRecord</h1>
 
-      <br />
-      <br />
-      <br />
-      <br />
+      <br /> <br /><br /><br />
+
+      
       <Flex direction="column">
         <h4> {currentMusicAlbum.id} </h4>
         <h4> {currentMusicAlbum.name} </h4>

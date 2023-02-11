@@ -3,31 +3,34 @@ import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components";
 import { deleteFunc, getMusicRecords } from "../Redux/AppReducer/action";
 import { useSearchParams, useLocation ,Link } from "react-router-dom";
-import { Box, Button, Center, Text } from "@chakra-ui/react";
+import { Button, Center } from "@chakra-ui/react";
 
 const MusicRecords = () => {
+
   const dispatch = useDispatch();
+
+
   const { musicRecords , isLoading , isError } = useSelector((store) => store.AppReducer);
-  // console.log(1, musicRecords);
+  
   const [searchParams] = useSearchParams();
   
-  const location = useLocation();
-  console.log("location",location)
-
-  // console.log("location", location);
+  const location = useLocation();  // detecting url
+  // console.log("location",location)
 
   const handleDelete = (id) =>{
 
    dispatch(deleteFunc(id)).then(()=>{
-    console.log("deletefunction called ")
       dispatch(getMusicRecords())
    })
 
   }
 
   useEffect(() => {
+
     if (location || musicRecords.length === 0) {
+
       const sortBy = searchParams.get("sortBy");
+      
       const queryParams = {
         params: {
           genre: searchParams.getAll("genre"),
@@ -35,9 +38,9 @@ const MusicRecords = () => {
           _order: sortBy,
         },
       };
-      // console.log("called");
       dispatch(getMusicRecords(queryParams));
     }
+
   }, [location.search]);
 
   return (

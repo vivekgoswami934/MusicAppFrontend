@@ -2,14 +2,11 @@ import {
   Box,
   Flex,
   Avatar,
-  Link,
   Button,
   Menu,
   MenuButton,
   MenuList,
-  MenuItem,
-  MenuDivider,
-  useDisclosure,
+ 
   useColorModeValue,
   Stack,
   useColorMode,
@@ -17,7 +14,7 @@ import {
   Text,
 } from '@chakra-ui/react';
 import { MoonIcon, SunIcon } from '@chakra-ui/icons';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate , Link } from 'react-router-dom';
 
 
   const shadow = "rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px";
@@ -28,15 +25,16 @@ export default function Navbar() {
 
 
   const handleClick = () =>{
-      navigate("/")
+      // navigate("/")
   }
                                        
   return (
     <>
       <Box bg={useColorModeValue('gray.100', 'white.900')} px={4} shadow={shadow} >
         <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
-          
+          <Link to="/">
           <Box onClick = {handleClick}><h1 style={{fontSize:"50px"}}>MusicApp</h1></Box>
+          </Link>
         
           <Flex alignItems={'center'}>
             <Stack direction={'row'} spacing={7}>

@@ -4,23 +4,25 @@ import { useSearchParams } from "react-router-dom";
 const FilterSort = () => {
   const [searchParams, setSearchParams] = useSearchParams();
 
-
-  let initalGenreParams = searchParams.getAll("genre");           // [] getAll
-  const [category, setCategory] = useState(initalGenreParams || []);
-
-  let initialSortParams = searchParams.get("sortBy");                // string  get
+  
+  
+  let initalGenreParams = searchParams.getAll("genre");   // []
+  
+  
+  
+  const [category, setCategory] = useState(initalGenreParams || []);                  // initalGenreParams || 
+  
+  let initialSortParams = searchParams.get("sortBy");   // a key or a string  
+  
+  
   const [sortBy, setSortBy] = useState(initialSortParams || "");
-
-
-  console.log(undefined || [])  // []
-
-
+  console.log("rendering" , sortBy)
 
 
   const handleGenreChange = (e) => {
-    const option = e.target.value;   // k-pop
+    const option = e.target.value;    // k-pop
  
-    let newCategory = [...category];    // [k-pop]
+    let newCategory = [...category];  
 
     if (category.includes(option)) {
       newCategory.splice(newCategory.indexOf(option), 1);
@@ -31,23 +33,30 @@ const FilterSort = () => {
   };
 
   const handleSortBy = (e) => {
-    setSortBy(e.target.value);
+  console.log("vivek")
+  let value = e.target.value;
+console.log(value,sortBy)
+
+
+  value ===  sortBy ? setSortBy(null) : setSortBy(e.target.value);
+    
+
+
   };
 
 
   useEffect(() => {
     if (category || sortBy) {
       const params = {};
-      category && (params.genre = category);
+      category && (params.genre = category);    // genre --> key
       sortBy && (params.sortBy = sortBy);
+
+
       setSearchParams(params);
     }
   }, [category, setSearchParams, sortBy]);  // dependency
 
-  // console.log(sortBy);
-  // console.log(searchParams.getAll("genre"));
 
-  //   console.log(category)
   return (
     <div>
       <h3>Filter...</h3>
@@ -100,20 +109,20 @@ const FilterSort = () => {
       <div>
         <div>
           <input
-            type="radio"
+            type="checkbox"
             value="asc"
             name="sortBy"
-            defaultChecked={sortBy === "asc"}
+            checked={sortBy === "asc"}
             onChange={handleSortBy}
           />
           <label>Ascending</label>
         </div>
         <div>
           <input
-            type="radio"
+            type="checkbox"
             value="desc"
             name="sortBy"
-            defaultChecked={sortBy === "desc"}
+            checked={sortBy === "desc"}
             onChange={handleSortBy}
           />
           <label>Descending</label>
